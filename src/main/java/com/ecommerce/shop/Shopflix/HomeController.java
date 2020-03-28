@@ -5,7 +5,6 @@ import com.ecommerce.shop.Shopflix.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,12 +16,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Optional;
 
-@RequestMapping("/shopflix")
 @Controller
 public class HomeController {
     @Autowired
     private UserRepository userRepository;
-//    @Autowired
+    //    @Autowired
 //    private JavaMailSender javaMailSender;
     Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -41,7 +39,7 @@ public class HomeController {
     @RequestMapping("/login")
     public ModelAndView login() {
         User u = new User();
-        return new ModelAndView("login","user",u);
+        return new ModelAndView("login", "user", u);
     }
 
     @PostMapping("/loginuser")
@@ -52,7 +50,7 @@ public class HomeController {
             session.setAttribute("LOGGED_IN", user1);
             logger.info("Here user logged in Session started");
             try {
-                response.sendRedirect("/shopflix/");
+                response.sendRedirect("/");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -67,11 +65,11 @@ public class HomeController {
 
             if (alreadyExists) {
                 logger.info("Already Registered");
-                response.sendRedirect("/shopflix/login");
+                response.sendRedirect("/login");
             } else {
-             //   sendMail(User.getEmail(), User.getPassword());
+                //   sendMail(User.getEmail(), User.getPassword());
                 userRepository.save(User);
-               response.sendRedirect("/shopflix/login");
+                response.sendRedirect("/login");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,9 +87,10 @@ public class HomeController {
     @RequestMapping("/logout")
     public void logout(HttpServletResponse response, HttpSession session) throws IOException {
         session.invalidate();
-        response.sendRedirect("/shopflix/home");
+        response.sendRedirect("/");
     }
+
     public ModelAndView alreadyRegistered(User user) {
-        return new ModelAndView("login","user",user);
+        return new ModelAndView("login", "user", user);
     }
 }

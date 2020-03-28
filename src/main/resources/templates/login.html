@@ -152,7 +152,7 @@ p.exists {
     <section class="login">
         <div class="login-page">
             <div class="form">
-                <form class="register-form" th:action="@{/shopflix/registeruser}" th:object="${user}" method="post"
+                <form class="register-form" th:action="@{/registeruser}" th:object="${user}" method="post"
                       id="search-form">
                     <input type="text" placeholder="name" th:field="*{name}" id="name" required/>
                     <input type="password" placeholder="password" th:field="*{password}" id="password" required/>
@@ -164,7 +164,7 @@ p.exists {
                         <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/already_exixts.png?alt=media&token=4d1f4c35-07f5-4858-95f0-1b47ade22128">
                     </div>
                 </form>
-                <form class="login-form" th:action="@{/shopflix/loginuser}" th:object="${user}" method="post">
+                <form class="login-form" th:action="@{/loginuser}" th:object="${user}" method="post">
                     <input type="email" placeholder="username" th:field="*{email}" id="email_login" required/>
                     <input type="password" placeholder="password" th:field="*{password}" id="password_login" required/>
                     <button>login</button>
