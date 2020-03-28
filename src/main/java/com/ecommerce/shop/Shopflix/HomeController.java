@@ -71,6 +71,7 @@ public class HomeController {
                 response.sendRedirect("/shopflix/login");
             } else {
              //   sendMail(User.getEmail(), User.getPassword());
+                userRepository.save(User);
                response.sendRedirect("/shopflix/login");
             }
         } catch (Exception e) {
