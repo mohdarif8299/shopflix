@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Shopfix</title>
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style type="text/css" th:inline="text">
+    * {
+		  font-family: 'Didact Gothic', sans-serif;
+			padding: 0px;
+			color: #ffffff;
+			overflow-x: hidden;
+		}
+		.navbar-light .navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+		.row {
+			background-color: #f0f0f0;
+		}
+		.navbar-light .navbar-brand {
+    color: #ffffff !important;
+}
+		.bg-light {
+    background-color: #185460 !important;
+}
+		.parallex {
+    padding: 0px;
+    margin: 0px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/parallex_bg.jpg?alt=media&token=af47ef28-f697-4046-a41d-40374fa983fc');
+    max-width: 100%;
+    width: 100%;
+    height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.post_content {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.container-fluid {
+    width: 100%;
+     padding-right: 0px;
+     padding-left: 0px;
+     margin:0px;
+}
+		.content {
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-color: #ffffff;
+    box-shadow: #f0f0f0 1px 2px 1px 1px;
+    margin: 10px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform: all 1s;
+}
+
+.content:hover {
+	cursor: pointer;
+}
+
+		.content h1{
+			font-size: 30px;
+			margin-top: 80px;
+		}
+    .bs-example{
+        margin: 0px;
+    }
+    p.heading_post {
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 900;
+}
+   a.login_page {
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    float: right;
+    margin: auto;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    min-width: 150px;
+    text-align: center;
+    transition: all 0.5s;
+    border-radius: 3px;
+}
+img.heading_image {
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+img.post_image {
+    margin: 0px;
+    position: relative;
+    height: 100%;
+}
+.deal_of_day {
+    height: 300px;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 10px;
+    color: #ffffff;
+    background:url('https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/background_deal.png?alt=media&token=d430385d-dae7-4c70-94a1-c1f3c5e2b422');
+}
+p.title {
+    font-size: 30px;
+    font-weight: 900;
+    border-bottom: 4px solid #e4a064;
+    display: inline;
+    border-inline-end-style: none;
+    position: relative;
+    top: 100px;
+    left: 150px;
+}
+p.content_deal {
+    font-size: 16px;
+    position: relative;
+    top: 120px;
+    left: 50px;
+}
+button.deal_shop {
+    border: navajowhite;
+    padding: 10px;
+    position: relative;
+    top: 125px;
+    width: 100px;
+    text-align: center;
+    transition: width 1s;
+    background-color: #45346f;
+    color: #ffffff;
+}
+button.deal_shop:hover {
+	width: 150px;
+}
+p.latest-deal {
+    position: absolute;
+    top: 100px;
+    font-size: 30px;
+    left: 50px;
+    font-weight: 900;
+    color: #f0f0f0;
+}
+.special_mobile {
+	background-image:url('https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/mobile_bg.png?alt=media&token=d90f930e-8edc-4221-9c18-f38faba998b1');
+	max-width: 100%;
+    width: 100%;
+    height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+p.special_mobile_heading {
+    font-size: 25px;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+img.perfection_image_class.img-fluid {
+    height: 500px;
+    transition: all 1s;
+    overflow: hidden;
+    margin-left: 100px;
+}
+// starts here
+.panel-default>.panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #e4e5e7;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.panel-default>.panel-heading a {
+  display: block;
+  padding: 10px 15px;
+}
+
+.panel-default>.panel-heading a:after {
+  content: "";
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: right;
+  transition: transform .25s linear;
+  -webkit-transition: -webkit-transform .25s linear;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"]:after {
+  content: "\2212";
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.panel-default>.panel-heading a[aria-expanded="false"]:after {
+  content: "\002b";
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.per {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/mobile_bg.png?alt=media&token=d90f930e-8edc-4221-9c18-f38faba998b1');
+    height: 100%;
+    width: 100%;
+}
+.perfection_data {
+    position: relative;
+    margin-top: -430px;
+    width: 50%;
+    float: right;
+    margin-right: 50px;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: transparent;
+}
+a:hover {
+ color: #ffffff;
+}
+.panel-body {
+    font-size: 18px;
+    color: #ffffff;
+    padding: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                Shopfix
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">Products</a>
+                    <a href="#" class="nav-item nav-link">Blogs</a>
+                    <a th:text=" ${user.name} ? ${user.name}+ '  '+Logout    :Login " href="login" class="login_page">Login</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="parallex"></div>
+    <div class="row">
+        <div class="col-sm" data-aos="fade-up-right">
+            <div class="content">
+                <a href="#">
+                    <p class="heading_post">
+                        <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/safety.png?alt=media&token=aaedf9f5-fd50-4520-945c-cabe088c490c">
+                        Shopiflix Care about your safety
+                    </p>
+                    <div class="post_content">
+                        <img class="post_image img-fluid" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/safety_bg.jpg?alt=media&token=7638035f-6f4d-4c90-9c32-6ba4a80f25c7" height="250" width="100%">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm" data-aos="fade-down-right">
+            <div class="content">
+                <a href="#">
+                    <p class="heading_post">
+                        <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/xiaomi.png?alt=media&token=8160153c-80af-4dfa-91bd-4a4104ce5710">
+                        Top Xiaomi Smartphones
+                    </p>
+                    <div class="post_content">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/mi_bg.jpeg?alt=media&token=9bf92c1f-c49e-4e7a-b969-b72f435825eb" class="post_image img-fluid" height="250" width="100%">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm" data-aos="fade-up-left">
+            <div class="content">
+                <a href="#">
+                    <p class="heading_post">
+                        <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/oppo.png?alt=media&token=aacf28b5-7038-4eb4-8e8b-3271cc5e347c">
+                        Top Oppo Smartphones
+                    </p>
+                    <div class="post_content">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/oppo_bg.jpg?alt=media&token=46421449-cf56-44a3-b95a-ac7873aeee97" class="post_image img-fluid" height="250" width="100%">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm" data-aos="fade-left">
+            <div class="content">
+                <a href="#">
+                    <p class="heading_post">
+                        <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/apple.png?alt=media&token=899354c6-cefb-47bd-9c6e-d2ee8ae1472b">
+                        Top Apple Products
+                    </p>
+                    <div class="post_content">
+                        <img class="post_image img-fluid" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/apple_bg.jpg?alt=media&token=f0c613ab-cca4-41f6-be64-5c49c2659cd2" height="250" width="100%">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" data-aos="flip-up">
+    <div class="col-sm">
+        <div class="deal_of_day">
+            <p class="title">Deal of the Week</p>
+            <p class="content_deal">Grab the trending items of the week @ the lowest prices ever.</p>
+            <button class="deal_shop">Shop Now</button>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="deal_of_day">
+            <p class="latest-deal">SAMSUNG S20</p>
+            <img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/s20_render_xee.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <div class="special_mobile" data-aos="zoom-out-right">
+            <p class="special_mobile_heading">Designed to Perfection</p>
+            <div class="perfection_class">
+                <img src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/perfection_image_bg.png?alt=media&token=33b9bbf5-8ee0-4406-9f10-04e2716d1b05" class="perfection_image_class img-fluid">
+            </div>
+            <div class="perfection_data" data-aos="fade-up"
+                 data-aos-anchor-placement="top-center">
+                <!-- start from here-->
+
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                   aria-expanded="true" aria-controls="collapseOne">
+                                    Side-Mounted Fingerprint Sensor
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                Ergonomically designed
+                                for easy access and speed.
+                                Now unlock your device
+                                easily whether it is placed
+                                on the table or in your pocket.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Rear camera photography features
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                Ultra nightscape mode | AI scene detection | Smart ultra-wide angle mode | Ultra
+                                wide-angle edge distortion correction | AI Beautify | Burst mode | Tilt-shift | Level
+                                display | Custom watermark |
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    16.9cm (6.67) FHD+ Resolution Dot Display
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                Resolution: 2400 x 1080 FHD+
+                                Standard mode | Sunshine mode | Night mode | Color temperature adjustment
+                                Corning® Gorilla® Glass 5
+                                Anti-oil and anti-fingerprint protective coating
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ends from here-->
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+ $('.login_page').click(function(){
+     var label = $(".login_page").text();
+       if($(".login_page").text() == 'Login') {
+        $(".login_page").attr("href","login");
+           }
+         else {
+           $(".login_page").attr("href","logout");
+           $(".login_page").text('Login');
+         }
+    });
+});
+
+</script>
+<script>
+   AOS.init();
+
+</script>
+</html>
