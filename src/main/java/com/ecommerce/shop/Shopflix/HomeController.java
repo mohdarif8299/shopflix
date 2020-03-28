@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,8 +22,8 @@ import java.util.Optional;
 public class HomeController {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private JavaMailSender javaMailSender;
+//    @Autowired
+//    private JavaMailSender javaMailSender;
     Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @RequestMapping("/")
@@ -78,13 +77,13 @@ public class HomeController {
         }
     }
 
-    private void sendMail(String email, String password) {
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        simpleMailMessage.setTo(email);
-        simpleMailMessage.setSubject("Welcome to Shopflix");
-        simpleMailMessage.setText("Your Registration for Shopflix  id Successful\n Your Password is " + password);
-        javaMailSender.send(simpleMailMessage);
-    }
+//    private void sendMail(String email, String password) {
+//        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+//        simpleMailMessage.setTo(email);
+//        simpleMailMessage.setSubject("Welcome to Shopflix");
+//        simpleMailMessage.setText("Your Registration for Shopflix  id Successful\n Your Password is " + password);
+//        javaMailSender.send(simpleMailMessage);
+//    }
 
     @RequestMapping("/logout")
     public void logout(HttpServletResponse response, HttpSession session) throws IOException {
