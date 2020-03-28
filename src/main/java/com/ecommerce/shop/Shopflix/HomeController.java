@@ -45,7 +45,7 @@ public class HomeController {
     }
 
     @PostMapping("/loginuser")
-    public void signInUserWithUsernameAndPassword(@ModelAttribute User user, HttpSession session, HttpServletResponse response) {
+    public void signInUserWithUsernameAndPassword(@ModelAttribute User user, HttpSession session, HttpServletResponse response) throws IOException {
         Optional<User> details = userRepository.findById(user.getEmail());
         details.ifPresent(user1 -> {
             System.out.println(user1.getEmail());
@@ -57,6 +57,7 @@ public class HomeController {
                 e.printStackTrace();
             }
         });
+        response.sendRedirect("/shopflix/");
     }
 
     @PostMapping("/registeruser")
