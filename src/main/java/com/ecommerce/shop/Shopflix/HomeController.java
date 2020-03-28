@@ -57,7 +57,6 @@ public class HomeController {
                 e.printStackTrace();
             }
         });
-        response.sendRedirect("/shopflix/");
     }
 
     @PostMapping("/registeruser")
