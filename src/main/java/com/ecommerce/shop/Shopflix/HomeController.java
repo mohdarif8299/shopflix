@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +27,7 @@ public class HomeController {
     private JavaMailSender javaMailSender;
     Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public ModelAndView home(HttpSession session) {
         User user = (User) session.getAttribute("LOGGED_IN");
         if (user == null) {
@@ -71,7 +70,7 @@ public class HomeController {
                 logger.info("Already Registered");
                 response.sendRedirect("/shopflix/login");
             } else {
-                sendMail(User.getEmail(), User.getPassword());
+             //   sendMail(User.getEmail(), User.getPassword());
                response.sendRedirect("/shopflix/login");
             }
         } catch (Exception e) {
