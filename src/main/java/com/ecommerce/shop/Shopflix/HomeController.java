@@ -52,7 +52,7 @@ public class HomeController {
             session.setAttribute("LOGGED_IN", user1);
             logger.info("Here user logged in Session started");
             try {
-                response.sendRedirect("/shopflix/home");
+                response.sendRedirect("/shopflix/");
             } catch (IOException e) {
                 e.printStackTrace();
             }
