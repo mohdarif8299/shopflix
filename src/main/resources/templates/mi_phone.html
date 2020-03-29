@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Shopfix Mi Phones</title>
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<style type="text/css">
+      * {
+      font-family: 'Didact Gothic', sans-serif;
+      padding: 0px;
+      }
+      body{
+      	overflow-x: hidden;
+      }
+      .carousel-inner {
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      }
+      .carousel-inner {
+      padding-top: 43.25%;
+      display: block;
+      content: "";
+      }
+      .carousel-item {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: skyblue;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }
+      .caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 60%;
+      z-index: 9;
+      margin-top: 20px;
+      text-align: center;
+      }
+      .caption h1 {
+      color: #fff;
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 23px;
+      }
+      .caption h2 {
+      color: rgba(255,255,255,.75);
+      font-size: 26px;
+      font-weight: 300;
+      }
+      a.big-button {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #eb7a00;
+      background: rgba(255, 0, 0, 0.75);
+      padding: 28px 35px;
+      border-radius: 3px;
+      margin-top: 80px;
+      margin-bottom: 0;
+      display: inline-block;
+      }
+      a.big-button:hover {
+      text-decoration: none;
+      background: rgba(255, 0, 0, 0.9);
+      }
+      a.view-demo {
+      color: #fff;
+      font-size: 21px;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 35px;
+      }
+      a.view-demo:hover {
+      text-decoration: none;
+      color: #333;
+      }
+      a.login_page {
+      text-align: right;
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      float: right;
+      margin: auto;
+      color: #ffffff;
+      padding: 10px;
+      text-decoration: none;
+      min-width: 150px;
+      text-align: center;
+      transition: all 0.5s;
+      border-radius: 3px;
+      }
+      .carousel-indicators .active {
+      background: #fff;
+      }
+      .carousel-indicators li {
+      background: rgba(255, 255, 255, 0.4);
+      border-top: 20px solid;
+      z-index: 15;
+      }
+      .navbar-light .navbar-nav .nav-link {
+      color: #ffffff !important;
+      }
+      .navbar-light .navbar-brand {
+      color: #ffffff !important;
+      }
+      .bg-light {
+      background-color: #00c4cc !important;
+      }
+      .main_body{
+      	padding: 10px;
+      	background-color: #ffffff;
+      }
+      .trending_heading p {
+    font-size: 18px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+.product_body {
+    height: auto;
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.5s;
+}
+img.product_image {
+    height: 200px;
+    transform: scale(1.2);
+    transition: all 0.5s;
+    position: relative;
+    padding: 20px;
+}
+.product_body:hover .product_image{
+	transform: scale(1.1);
+}
+.product_body:hover {
+ box-shadow: 0 5px 17px 0 rgba(23,84,116,0.18);
+}
+p.product_desc {
+    color: #666666;
+    font-size: 14px;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.product_price {
+    font-size: 14px;
+    font-weight: 900;
+}
+img.favourate {
+    position: relative;
+    float: right;
+    height: 20px;
+    width: 20px;
+}
+li {
+    display: inline-block;
+    width: 24%;
+    height:400px;
+}
+@media only screen and (max-width: 700px) {
+  li {
+   width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  li {
+    width: 100%;
+  }
+}
+   </style>
+<body>
+<div class="containter-fluid">
+    <section>
+        <div class="bs-example">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <a href="#" class="navbar-brand">
+                    Shopfix
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link active">Home</a>
+                        <a href="#" class="nav-item nav-link">Products</a>
+                        <a href="#" class="nav-item nav-link">Blogs</a>
+                        <a th:text=" ${user.name} ? ${user.name}+ '  ' +Logout    :Login "  href="login" class="login_page" >Login</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-sm">
+            <!-- carousel-->
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/parallex_bg.jpg?alt=media&token=af47ef28-f697-4046-a41d-40374fa983fc');">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- carousel ends-->
+        </div>
+    </div>
+    <section class="main_body" >
+        <div class="trending_heading">
+            <p>Trending Products</p>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <ul >
+                    <li th:each="product: ${productsList}">
+                        <a th:href="@{/data(param1=${product.product_id})}" style="text-decoration:none;color:#000000">
+                            <div class="product_body">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/favourate.png?alt=media&token=c6a2973b-4c39-4e1a-a28a-14041943e2c0" class="favourate" height="20" width="20">
+                                <img class="product_image img-fluid" th:src="@{${product.product_image}}">
+                                <p class="product_desc" th:text="${product.product_name}"></p>
+                                <p class="product_price" th:text="&#x20B9; +'  ' +${product.product_price}"></p>
+                            </div>
+                        </a>
+                    </li>
+            </div>
+
+        </div>
+    </section>
+</div>
+</body>
+<script>
+   AOS.init();
+</script>
+</html>
