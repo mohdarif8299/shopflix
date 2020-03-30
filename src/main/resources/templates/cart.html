@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Shopfix Mi Phones</title>
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style type="text/css">
+       *{
+		  	font-family: 'Didact Gothic', sans-serif;
+			padding: 0px;
+			overflow-x: hidden;
+		}
+		.container-fluid {
+	     	width: 100%;
+	     	padding-right: 0px;
+	     	padding-left: 0px;
+	     	margin:0px;
+		}
+		.bg-light {
+            background-color: #00c4cc !important;
+        }
+        	.navbar-light .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-size:1rem;
+}
+        .navbar-light .navbar-brand {
+            color: #ffffff;
+        }
+        section.main_cart {
+		    height: 460px;
+		    width: 98%;
+		    box-shadow: 0 7px 17px 0 rgba(23,84,116,0.18);
+		    padding: 10px;
+		    margin: 10px;
+		    position: relative;
+
+		}
+
+       section.main_cart::-webkit-scrollbar {
+  display: none;
+}
+		p.total_t {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: 900;
+    font-size: 18px;
+}
+		p.cart_title {
+		    padding-bottom: 5px;
+		    font-weight: 900;
+		    font-size: 20px;
+		    color: #000000;
+		    border-bottom: 2px solid #000000;
+		}
+		img.item_image {
+    float: left;
+    border: 1px solid #f0f0f0;
+    padding: 10px;
+    height: 200px;
+}
+		p.item_name {
+		    font-size: 16px;
+		    font-weight: 600;
+		    position: relative;
+		    left: 30px;
+		}
+		p.item_decription {
+    position: relative;
+    top: 0px;
+    left: 30px;
+    float: left;
+    display: -webkit-inline-box;
+    font-size: 14px;
+    width: 300px;
+}
+		.price_thing {
+    position: relative;
+    float: right;
+    right: 50px;
+    text-align: center;
+    top: 0px;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 5px;
+}
+		span {
+    z-index: 2;
+    position: relative;
+    float: left;
+    right: 0px;
+    font-weight: 900;
+    width: 100px;
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 30px;
+    text-align: right;
+}
+.remove_item {
+    position: relative;
+    font-size: 16px;
+    text-align: start;
+    display: inline-block;
+    text-decoration: none;
+    left: -270px;
+    top: 100px;
+}
+.remove_item a {
+	color: #b80f0a;
+	text-decoration: none;
+	}
+	.remove_item a:hover {
+	text-decoration: none;
+	}
+	.item {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.total_price {
+    padding: 10px;
+    text-align: right;
+    margin-right: 10px;
+    min-height: 100px;
+}
+p.t_price {
+    float: right;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+}
+.orange {
+    background-image: -moz-linear-gradient(0deg,#ff934b 0%,#ff5e62 100%);
+    background-image: -webkit-linear-gradient(0deg,#ff934b 0%,#ff5e62 100%);
+    background-image: -ms-linear-gradient(0deg,#ff934b 0%,#ff5e62 100%);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(255,97,98,0.46);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(255,97,98,0.46);
+    box-shadow: 0px 2px 8px 0px rgba(255,97,98,0.46);
+    color: #ffffff !important;
+    padding: 12px 10px;
+}
+.btn.orange {
+    position: relative;
+    /* top: 30px; */
+    width: 300px;
+    float: right;
+    display: block;
+}
+img.empty_icon {
+    position: relative;
+    text-align: center;
+    width: 30%;
+    top: 0px;
+    z-index: 1;
+    left: 400px;
+    margin: auto;
+}
+	</style>
+</head>
+<body>
+<div class="container-fluid">
+    <section class="navigation">
+        <div class="bs-example">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <a href="#" class="navbar-brand">
+                    Shopfix
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="#" class="nav-item nav-link">Products</a>
+                        <a href="#" class="nav-item nav-link">Blogs</a>
+                        <a href="/cart" class="nav-item nav-link">Cart</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="main_cart">
+        <div class="row">
+            <div class="col-sm">
+                <p class="cart_title">My Cart</p>
+                <img src="https://i1.wp.com/www.huratips.com/wp-content/uploads/2019/04/empty-cart.png?resize=520%2C245&ssl=1" class="empty_icon">
+                <ul>
+                    <li th:each="product: ${productsList}">
+                        <div class="item">
+                            <img class="item_image"  th:src="@{${product.product_image}}">
+                            <p class="item_name" th:text="${product.product_name}"></p>
+                            <p class="item_decription" th:text="${product.product_description}"></p>
+                            <div class="remove_item">
+                                <a th:id="'productid'+${product.product_id}" th:href="@{/remove(param1=${product.product_id})}">Remove</a>
+                            </div>
+                            <div class="price_thing">
+                                <span>Price</span><p class="item_price" th:text="&#x20B9; +'  ' +${product.product_price}"></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="total">
+        <div class="row">
+            <div class="col-sm">
+                <div class="total_price">
+                    <p class="total_t">Total Price:</p>
+                    <p class="t_price" th:text="${total_price}"></p><br/>
+                    <a href="https://secure.shopclues.com/atom/summary" class="btn orange"><div>Place Order</div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+     if ( $('ul li').length > 0) {
+              $('.empty_icon').hide();
+        }
+        else {
+         $('.empty_icon').show();
+        }
+    })
+</script>
+</html>

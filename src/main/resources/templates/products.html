@@ -159,12 +159,12 @@ img.product_image {
 	transform: scale(1.1);
 }
 .product_body:hover {
- box-shadow: 0 5px 17px 0 rgba(23,84,116,0.18);
+    border-radius: 3px;
+    box-shadow: 0 7px 17px 0 rgba(23,84,116,0.18);
 }
 p.product_desc {
     color: #666666;
     font-size: 14px;
-    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -208,9 +208,10 @@ li {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item nav-link active">Home</a>
+                        <a href="/" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">Products</a>
                         <a href="#" class="nav-item nav-link">Blogs</a>
+                        <a href="/cart" class="nav-item nav-link">Cart</a>
                         <a th:text=" ${user.name} ? ${user.name}+ '  ' +Logout    :Login "  href="login" class="login_page" >Login</a>
                     </div>
                 </div>
@@ -259,8 +260,8 @@ li {
                             </div>
                         </a>
                     </li>
+                </ul>
             </div>
-
         </div>
     </section>
 </div>

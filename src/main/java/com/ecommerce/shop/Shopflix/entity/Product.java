@@ -11,7 +11,20 @@ public class Product {
     private String product_id;
     private String product_name,product_description,product_image,product_brand,product_price,product_status;
 
-    public Product(String product_id,  String product_name,  String product_description,  String product_image,  String product_brand,  String product_price,  String product_status) {
+    @Override
+    public String toString() {
+        return "Product{" +
+                "product_id='" + product_id + '\'' +
+                ", product_name='" + product_name + '\'' +
+                ", product_description='" + product_description + '\'' +
+                ", product_image='" + product_image + '\'' +
+                ", product_brand='" + product_brand + '\'' +
+                ", product_price='" + product_price + '\'' +
+                ", product_status='" + product_status + '\'' +
+                '}';
+    }
+
+    public Product(String product_id, String product_name, String product_description, String product_image, String product_brand, String product_price, String product_status) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.product_description = product_description;

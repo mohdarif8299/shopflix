@@ -21,6 +21,7 @@
 		}
 		.navbar-light .navbar-nav .nav-link {
     color: #ffffff !important;
+    font-size:1rem;
 }
 		.row {
 			background-color: #f0f0f0;
@@ -28,9 +29,9 @@
 		.navbar-light .navbar-brand {
     color: #ffffff !important;
 }
-		.bg-light {
-    background-color: #185460 !important;
-}
+			.bg-light {
+            background-color: #00c4cc !important;
+        }
 		.parallex {
     padding: 0px;
     margin: 0px;
@@ -95,6 +96,7 @@
     margin: auto;
     color: #ffffff;
     padding: 10px;
+    font-size:1rem;
     text-decoration: none;
     min-width: 150px;
     text-align: center;
@@ -273,6 +275,7 @@ a:hover {
                     <a href="#" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">Products</a>
                     <a href="#" class="nav-item nav-link">Blogs</a>
+                    <a href="/cart" class="nav-item nav-link">Cart</a>
                     <a th:text=" ${user.name} ? ${user.name}+ '  '+Logout    :Login " href="login" class="login_page">Login</a>
                 </div>
             </div>
@@ -295,7 +298,7 @@ a:hover {
         </div>
         <div class="col-sm" data-aos="fade-down-right">
             <div class="content">
-                <a th:href="@{/mi-phones(param=Mi)}">
+                <a th:href="@{/products(param=Mi)}">
                     <p class="heading_post">
                         <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/xiaomi.png?alt=media&token=8160153c-80af-4dfa-91bd-4a4104ce5710">
                         Top Xiaomi Smartphones
@@ -308,7 +311,7 @@ a:hover {
         </div>
         <div class="col-sm" data-aos="fade-up-left">
             <div class="content">
-                <a th:href="@{/mi-phones(param=Oppo)}">
+                <a th:href="@{/products(param=Oppo)}">
                     <p class="heading_post">
                         <img class="heading_image" src="https://firebasestorage.googleapis.com/v0/b/shopflix-c4ad7.appspot.com/o/oppo.png?alt=media&token=aacf28b5-7038-4eb4-8e8b-3271cc5e347c">
                         Top Oppo Smartphones
